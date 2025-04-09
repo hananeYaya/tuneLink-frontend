@@ -1,0 +1,17 @@
+
+#buil le docker
+docker-compose up --build
+
+# lancer le container
+docker compose up -d     
+
+
+
+# pour avoir acces a la console de docker 
+docker exec -it my-app-react-native-app-1 bash
+
+
+npm instal
+npm run web
+expo start
+
