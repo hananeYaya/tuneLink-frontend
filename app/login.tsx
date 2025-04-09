@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { AntDesign, FontAwesome } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 
 
 export default function LoginScreen() {
-    const router = useRouter();
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             {/* <Image
@@ -26,7 +26,7 @@ export default function LoginScreen() {
                 style={styles.input}
             />
 
-            <TouchableOpacity style={styles.continueButton}>
+            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate('create-profile')}>
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>
 
@@ -40,7 +40,7 @@ export default function LoginScreen() {
                 <FontAwesome name="apple" size={22} color="black" />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => router.push('/register')}>
+            <TouchableOpacity onPress={() => navigation.navigate('register')}>
                 <Text style={styles.signupText}>
                     Pas de compte ? <Text style={{ fontWeight: 'bold' }}>Inscrivez-vous</Text>
                 </Text>
