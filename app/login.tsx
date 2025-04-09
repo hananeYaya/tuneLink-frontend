@@ -26,9 +26,11 @@ export default function LoginScreen() {
                 style={styles.input}
             />
 
-            <TouchableOpacity style={styles.continueButton}>
-                <Text style={styles.continueButtonText}>Continuer</Text>
-            </TouchableOpacity>
+<TouchableOpacity 
+    style={styles.continueButton} 
+>
+    <Text style={styles.continueButtonText}>Continuer</Text>
+</TouchableOpacity>
 
             <TouchableOpacity style={styles.socialButton}>
                 <Text style={styles.socialText}>Se connecter avec Compte Google </Text>
