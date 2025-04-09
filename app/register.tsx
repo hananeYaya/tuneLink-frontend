@@ -40,7 +40,7 @@ export default function RegisterScreen() {
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('/login')}>
+            <TouchableOpacity onPress={() => navigation.navigate('login')}>
                 <Text style={styles.signupText}>
                     Déjà un compte ? <Text style={{ fontWeight: 'bold' }}>Connectez-vous</Text>
                 </Text>

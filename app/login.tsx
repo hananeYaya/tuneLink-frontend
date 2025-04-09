@@ -28,7 +28,7 @@ export default function LoginScreen() {
 
 <TouchableOpacity 
     style={styles.continueButton} 
-    onPress={() => router.push('search_musician' as any)}
+    onPress={() => navigation.push('search_musician' as any)}
 >
     <Text style={styles.continueButtonText}>Continuer</Text>
 </TouchableOpacity>
