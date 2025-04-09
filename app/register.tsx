@@ -36,11 +36,11 @@ export default function RegisterScreen() {
                 style={styles.input}
             />
 
-            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate(' ')}>
+            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate('')}>
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('login')}>
+            <TouchableOpacity onPress={() => navigation.navigate('')}>
                 <Text style={styles.signupText}>
                     Déjà un compte ? <Text style={{ fontWeight: 'bold' }}>Connectez-vous</Text>
                 </Text>
