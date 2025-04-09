@@ -30,7 +30,7 @@ export default function SearchMusician() {
                     Chercher un musicien grâce à notre nouvelle fonctionnalité de{' '}
                     <Text style={{ fontWeight: 'bold' }}>géolocalisation</Text>.
                 </Text>
-                <Button title="Afficher la carte" onPress={() => navigation.navigate('')} color="#007bff" />
+                <Button title="Afficher la carte" onPress={() => navigation.navigate('map')} color="#007bff" />
             </View>
 
             <View>
