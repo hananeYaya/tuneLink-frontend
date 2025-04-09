@@ -36,7 +36,7 @@ export default function RegisterScreen() {
                 style={styles.input}
             />
 
-            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate('')}>
+            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate('create-profile')}>
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>
 
