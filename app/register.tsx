@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 
 export default function RegisterScreen() {
-    const router = useRouter();
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             {/* <Image
@@ -36,11 +36,11 @@ export default function RegisterScreen() {
                 style={styles.input}
             />
 
-            <TouchableOpacity style={styles.continueButton}>
+            <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate(' ')}>
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => router.push('/login')}>
+            <TouchableOpacity onPress={() => navigation.navigate('login')}>
                 <Text style={styles.signupText}>
                     Déjà un compte ? <Text style={{ fontWeight: 'bold' }}>Connectez-vous</Text>
                 </Text>
