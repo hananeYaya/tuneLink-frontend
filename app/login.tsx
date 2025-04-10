@@ -8,11 +8,11 @@ export default function LoginScreen() {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
-            {/* <Image
-        source={require('../assets/logo.png')}
-        style={styles.logo}
-        resizeMode="contain"
-      /> */}
+            <Image
+                source={require('../assets/logo.png')}
+                style={styles.logo}
+                resizeMode="contain"
+            />
 
             <TextInput
                 placeholder="Adresse mail"

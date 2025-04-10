@@ -13,12 +13,12 @@ export default function CreateProfile() {
 
             <Text style={styles.title}>Créer votre profil</Text>
 
-            {/* <Pressable>
+            <Pressable>
                 <Image
-                    source={require('')}
+                    source={require('../assets/profileImage.png')}
                     style={styles.profileImage}
                 />
-            </Pressable> */}
+            </Pressable>
             <Text style={styles.profileName}>Nom de profil</Text>
 
             <TextInput style={styles.input} placeholder="Nom de profil" placeholderTextColor="#aaa" />
