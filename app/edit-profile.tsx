@@ -2,16 +2,16 @@ import { View, Text, TextInput, Button, StyleSheet, Image, Pressable } from 'rea
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function CreateProfile() {
+export default function EditProfile() {
     const router = useRouter();
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.backButton} onPress={() => router.replace('/register')}>
+            <Pressable style={styles.backButton} onPress={() => router.replace('/')}>
                 <Ionicons name="arrow-back" size={20} color="white" />
             </Pressable>
 
-            <Text style={styles.title}>Créer votre profil</Text>
+            <Text style={styles.title}>Modifier votre profil</Text>
 
             <Pressable>
                 <Image
@@ -30,8 +30,11 @@ export default function CreateProfile() {
                 <Button title="Annuler" onPress={() => router.back()} color="#ccc" />
                 <Button title="Valider" onPress={() => alert("Profil validé")} color="#007bff" />
             </View>
-        </View>
 
+            {/* <View>
+                <BottomTabs />
+            </View> */}
+        </View>
     );
 }
 
