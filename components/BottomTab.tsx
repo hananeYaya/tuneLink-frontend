@@ -8,19 +8,19 @@ const BottomTabs = () => {
     return (
         <View style={styles.bottomTabs}>
             <View style={styles.tabItem}>
-                <Ionicons onPress={() => navigation.navigate('')} name="home-outline" size={20} color="white" />
+                <Ionicons name="home-outline" size={20} color="white" />
                 <Text style={styles.label}>Accueil</Text>
             </View>
             <View style={styles.tabItem}>
-                <Ionicons onPress={() => navigation.navigate('')} name="search" size={20} color="white" />
+                <Ionicons onPress={() => navigation.navigate('search_musician')} name="search" size={20} color="white" />
                 <Text style={styles.label}>Rechercher</Text>
             </View>
             <View style={styles.tabItem}>
-                <Ionicons onPress={() => navigation.navigate('')} name="calendar-outline" size={20} color="white" />
+                <Ionicons onPress={() => navigation.navigate('search')} name="calendar-outline" size={20} color="white" />
                 <Text style={styles.label}>Evénements</Text>
             </View>
             <View style={styles.tabItem}>
-                <Ionicons onPress={() => navigation.navigate('')} name="person-outline" size={20} color="white" />
+                <Ionicons onPress={() => navigation.navigate('edit-profile')} name="person-outline" size={20} color="white" />
                 <Text style={styles.label}>Profil</Text>
             </View>
         </View>

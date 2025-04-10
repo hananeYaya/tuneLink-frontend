@@ -1,13 +1,13 @@
 import { View, Text, TextInput, Button, StyleSheet, Image, Pressable } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useNavigation } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function CreateProfile() {
-    const router = useRouter();
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.backButton} onPress={() => router.replace('/register')}>
+            <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
                 <Ionicons name="arrow-back" size={20} color="white" />
             </Pressable>
 
@@ -27,8 +27,8 @@ export default function CreateProfile() {
             <TextInput style={styles.input} placeholder="Influences musicales" placeholderTextColor="#aaa" />
 
             <View style={styles.buttonContainer}>
-                <Button title="Annuler" onPress={() => router.back()} color="#ccc" />
-                <Button title="Valider" onPress={() => alert("Profil validé")} color="#007bff" />
+                <Button title="Annuler" onPress={() => navigation.navigate('')} color="#ccc" />
+                <Button title="Valider" onPress={() => navigation.navigate('search_musician')} color="#007bff" />
             </View>
         </View>
 

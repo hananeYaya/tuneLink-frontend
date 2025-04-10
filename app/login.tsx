@@ -26,12 +26,12 @@ export default function LoginScreen() {
                 style={styles.input}
             />
 
-<TouchableOpacity 
-    style={styles.continueButton} 
-    onPress={() => navigation.push('search_musician' as any)}
->
-    <Text style={styles.continueButtonText}>Continuer</Text>
-</TouchableOpacity>
+            <TouchableOpacity
+                style={styles.continueButton}
+                onPress={() => navigation.push('create-profile' as any)}
+            >
+                <Text style={styles.continueButtonText}>Continuer</Text>
+            </TouchableOpacity>
 
             <TouchableOpacity style={styles.socialButton}>
                 <Text style={styles.socialText}>Se connecter avec Compte Google </Text>
