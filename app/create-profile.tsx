@@ -20,7 +20,7 @@ export default function CreateProfile() {
                 />
             </Pressable> */}
             <Text style={styles.profileName}>Nom de profil</Text>
-
+            
             <TextInput style={styles.input} placeholder="Nom de profil" placeholderTextColor="#aaa" />
             <TextInput style={styles.input} placeholder="Description" placeholderTextColor="#aaa" />
             <TextInput style={styles.input} placeholder="Instruments joués" placeholderTextColor="#aaa" />
