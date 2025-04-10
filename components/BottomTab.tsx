@@ -19,7 +19,7 @@ const BottomTabs = () => {
             setActiveTab('events');
         } else if (currentPath === '/edit-profile') {
             setActiveTab('profile');
-        } else if (currentPath === '/') {
+        } else if (currentPath === '/homescreen') {
             setActiveTab('home');
         }
     }, [currentPath]);
@@ -32,7 +32,7 @@ const BottomTabs = () => {
         // Naviguer vers la page correspondante
         switch (tabName) {
             case 'home':
-                router.push('/');
+                router.push('/homescreen');
                 break;
             case 'search':
                 router.push('/search_musician');

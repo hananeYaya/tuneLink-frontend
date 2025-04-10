@@ -28,7 +28,7 @@ export default function LoginScreen() {
 
             <TouchableOpacity
                 style={styles.continueButton}
-                onPress={() => navigation.push('create-profile' as any)}
+                onPress={() => navigation.push('homescreen' as any)}
             >
                 <Text style={styles.continueButtonText}>Continuer</Text>
             </TouchableOpacity>

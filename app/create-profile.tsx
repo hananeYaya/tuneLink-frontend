@@ -27,8 +27,8 @@ export default function CreateProfile() {
             <TextInput style={styles.input} placeholder="Influences musicales" placeholderTextColor="#aaa" />
 
             <View style={styles.buttonContainer}>
-                <Button title="Annuler" onPress={() => navigation.navigate('')} color="#ccc" />
-                <Button title="Valider" onPress={() => navigation.navigate('search_musician')} color="#007bff" />
+                <Button title="Annuler" onPress={() => navigation.navigate('login')} color="#ccc" />
+                <Button title="Valider" onPress={() => navigation.navigate('homescreen')} color="#007bff" />
             </View>
         </View>
 

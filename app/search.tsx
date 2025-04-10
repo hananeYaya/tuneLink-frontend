@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'expo-router';
 import {
   View,
   Text,
@@ -59,6 +60,7 @@ const profiles: Profile[] = [
 ];
 
 export default function RechercherScreen() {
+  const router = useRouter(); 
   const renderProfile = ({ item }: { item: Profile }) => (
     <View style={styles.profileCard}>
       <Image source={{ uri: item.image }} style={styles.profileImage} />
@@ -75,7 +77,9 @@ export default function RechercherScreen() {
       <View style={styles.header}>
         <Text style={styles.headerText}>Rechercher</Text>
         <View style={styles.headerIcons}>
-          <Feather name="message-circle" size={24} color="white" style={styles.icon} />
+        <TouchableOpacity onPress={() => router.push('/receiver')}>
+            <Feather name="message-circle" size={24} color="white" style={styles.icon} />
+          </TouchableOpacity>
           <Ionicons name="notifications-outline" size={24} color="white" />
         </View>
       </View>

@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingTop: 50,
     },
+    
     content: {
         flex: 1,
         justifyContent: 'flex-start',
