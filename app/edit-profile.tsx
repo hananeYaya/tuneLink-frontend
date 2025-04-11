@@ -15,12 +15,14 @@ export default function EditProfile() {
 
                 <Text style={styles.title}>Modifier votre profil</Text>
 
-                <Pressable>
+                <Pressable style={styles.profileImageContainer}>
                     <Image
                         source={require('../assets/profileImage.png')}
                         style={styles.profileImage}
                     />
+                    <Ionicons name="pencil" size={24} color="white" style={styles.editIcon} />
                 </Pressable>
+                
                 <Text style={styles.profileName}>Nom de profil</Text>
 
                 <TextInput style={styles.input} placeholder="Nom de profil" placeholderTextColor="#aaa" />
@@ -29,10 +31,18 @@ export default function EditProfile() {
                 <TextInput style={styles.input} placeholder="Influences musicales" placeholderTextColor="#aaa" />
 
                 <View style={styles.buttonContainer}>
-                    <Button title="Annuler" onPress={() => navigation.goBack()} color="#ccc" />
-                    <Button title="Valider" onPress={() => alert("Profil validé")} color="#007bff" />
+                    <Pressable style={[styles.button, styles.cancelButton]} onPress={() => navigation.goBack()}>
+                        <Text style={styles.buttonText}>Annuler</Text>
+                    </Pressable>
+                    <Pressable style={[styles.button, styles.validateButton]} onPress={() => alert("Profil validé")}>
+                        <Text style={styles.buttonText}>Valider</Text>
+                    </Pressable>
                 </View>
             </View>
+
+            <Pressable style={styles.logoutButton} onPress={() => alert("Déconnexion effectuée")}>
+                <Ionicons name="log-out-outline" size={20} color="white" />
+            </Pressable>
 
             <View style={styles.bottomTabsContainer}>
                 <BottomTabs />
@@ -48,7 +58,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingTop: 50,
     },
-    
     content: {
         flex: 1,
         justifyContent: 'flex-start',
@@ -66,11 +75,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
+    profileImageContainer: {
+        position: 'relative',
+        alignSelf: 'center',
+    },
     profileImage: {
         width: 100,
         height: 100,
         borderRadius: 50,
-        alignSelf: 'center',
+    },
+    editIcon: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        backgroundColor: '#007bff',
+        borderRadius: 15,
+        padding: 5,
     },
     profileName: {
         color: '#ccc',
@@ -89,6 +109,30 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 20,
+    },
+    button: {
+        flex: 1,
+        paddingVertical: 12,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginHorizontal: 5,
+    },
+    cancelButton: {
+        backgroundColor: '#ccc',
+    },
+    validateButton: {
+        backgroundColor: '#007bff',
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    logoutButton: {
+        position: 'absolute',
+        top: 50,
+        right: 20,
+        zIndex: 1,
     },
     bottomTabsContainer: {
         borderTopWidth: 1,

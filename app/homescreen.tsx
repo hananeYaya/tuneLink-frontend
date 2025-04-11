@@ -179,7 +179,6 @@ export default function HomeScreen() {
           />
         </View>
       </ScrollView>
-  
       <BottomTabs />
     </SafeAreaView>
   );

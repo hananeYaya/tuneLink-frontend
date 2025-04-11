@@ -111,10 +111,9 @@ export default function RechercherScreen() {
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ paddingBottom: 100 }}
       />
-
-      <View>
-        <BottomTabs />
-      </View>
+      <View style={{ paddingBottom: 20 }}>
+  <BottomTabs />
+</View>
     </SafeAreaView>
   );
 }

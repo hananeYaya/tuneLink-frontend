@@ -15,7 +15,7 @@ const BottomTabs = () => {
     useEffect(() => {
         if (currentPath === '/search_musician') {
             setActiveTab('search');
-        } else if (currentPath === '/search') {
+        } else if (currentPath === '/EventsScreen') {
             setActiveTab('events');
         } else if (currentPath === '/edit-profile') {
             setActiveTab('profile');
@@ -38,7 +38,7 @@ const BottomTabs = () => {
                 router.push('/search_musician');
                 break;
             case 'events':
-                router.push('/search');
+                router.push('/EventsScreen');
                 break;
             case 'profile':
                 router.push('/edit-profile');

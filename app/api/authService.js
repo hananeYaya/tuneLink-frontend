@@ -93,7 +93,7 @@ export const authService = {
       console.error('Auth check error:', error);
       return false;
     }
-  },
+  }
 };
 
 export default authService;
