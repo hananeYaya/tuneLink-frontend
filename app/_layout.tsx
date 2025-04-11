@@ -10,6 +10,8 @@ export default function Layout() {
       <Stack.Screen name="EventsScreen" options={{ title: 'Événements' }}/>
       <Stack.Screen name="UpcomingEventsScreen" options={{ title: 'Événements à venir' }}/>
       <Stack.Screen name="CreateEventScreen" options={{ title: 'Créer un événement' }}/>
+      <Stack.Screen name="myUpcomingEvents" options={{ title: 'Mes événements à venir' }}/>
+      <Stack.Screen name="MyEventsScreen" options={{ title: 'Mes événements' }}/>
     </Stack>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image, Alert, ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
-import { authService } from './api/authService';
+import { authService } from './api/services/authService';
 
 interface FormData {
     nom: string;

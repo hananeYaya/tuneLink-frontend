@@ -11,11 +11,17 @@ const BottomTabs = () => {
     const currentPath = usePathname();
     const [activeTab, setActiveTab] = useState<TabName>('home');
     
-    // Détermine l'onglet actif en fonction du chemin actuel - avec logique plus stricte
+    // Update the path check to include all event-related pages
     useEffect(() => {
         if (currentPath === '/search_musician') {
             setActiveTab('search');
-        } else if (currentPath === '/EventsScreen') {
+        } else if (
+            currentPath === '/api/event/EventsScreen' ||
+            currentPath === '/api/event/UpcomingEventsScreen' ||
+            currentPath === '/api/event/myUpcomingEvents' ||
+            currentPath === '/api/event/MyEventsScreen' ||
+            currentPath === '/api/event/CreateEventScreen'
+        ) {
             setActiveTab('events');
         } else if (currentPath === '/edit-profile') {
             setActiveTab('profile');
@@ -24,12 +30,19 @@ const BottomTabs = () => {
         }
     }, [currentPath]);
     
+    // Fonction pour vérifier si un onglet est actif
+    const isActive = (tabName: TabName) => activeTab === tabName;
+    
+    // Génère la couleur de l'icône en fonction de l'état actif
+    const getIconColor = (tabName: TabName) => {
+        return isActive(tabName) ? '#007bff' : 'white';
+    };
+    
     // Fonction pour naviguer vers un onglet
     const navigateToTab = (tabName: TabName) => {
-        // Mettre à jour immédiatement l'onglet actif pour éviter les décalages visuels
         setActiveTab(tabName);
         
-        // Naviguer vers la page correspondante
+        // Navigate to the main page of each tab
         switch (tabName) {
             case 'home':
                 router.push('/homescreen');
@@ -38,20 +51,12 @@ const BottomTabs = () => {
                 router.push('/search_musician');
                 break;
             case 'events':
-                router.push('/EventsScreen');
+                router.push('/api/event/EventsScreen');
                 break;
             case 'profile':
                 router.push('/edit-profile');
                 break;
         }
-    };
-    
-    // Fonction pour vérifier si un onglet est actif
-    const isActive = (tabName: TabName) => activeTab === tabName;
-    
-    // Génère la couleur de l'icône en fonction de l'état actif
-    const getIconColor = (tabName: TabName) => {
-        return isActive(tabName) ? '#007bff' : 'white';
     };
     
     return (
@@ -79,7 +84,7 @@ const BottomTabs = () => {
                 onPress={() => navigateToTab('events')}
             >
                 <Ionicons name="calendar-outline" size={22} color={getIconColor('events')} />
-                <Text style={[styles.label, isActive('events') && styles.activeLabel]}>Evénements</Text>
+                <Text style={[styles.label, isActive('events') && styles.activeLabel]}>Événements</Text>
                 {isActive('events') && <View style={styles.activeIndicator} />}
             </TouchableOpacity>
             

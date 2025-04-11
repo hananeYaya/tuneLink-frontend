@@ -1,38 +1,84 @@
-import React from 'react';
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  ImageSourcePropType
+} from "react-native";
 
 interface EventBannerProps {
+  imageUri?: string | ImageSourcePropType;
   title: string;
-  description: string;
-  image?: string;
-  route: string;
+  description?: string;
   onPress: () => void;
 }
 
 const EventBanner: React.FC<EventBannerProps> = ({ 
+  imageUri, 
   title, 
   description, 
-  image, 
-  route, 
   onPress 
 }) => {
+  const defaultImage = require('@/assets/event-banner-upcoming.jpg');
+
   return (
-    <div 
-      className="relative overflow-hidden rounded-xl mb-4 cursor-pointer" 
-      onClick={onPress}
+    <TouchableOpacity 
+      style={styles.banner} 
+      onPress={onPress}
     >
-      <div className="relative h-40 w-full">
-        <img 
-          src={image || '/api/placeholder/400/150'} 
-          alt={title} 
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-50">
-          <h2 className="text-white text-lg font-bold mb-1">{title}</h2>
-          <p className="text-white text-sm opacity-80">{description}</p>
-        </div>
-      </div>
-    </div>
+      <Image
+        source={
+          typeof imageUri === 'string' 
+            ? { uri: imageUri } 
+            : imageUri || defaultImage
+        }
+        style={styles.bannerImage}
+        defaultSource={defaultImage}
+      />
+      <View style={styles.overlay} />
+      <View style={styles.content}>
+        <Text style={styles.title}>{title}</Text>
+        {description && (
+          <Text style={styles.description}>{description}</Text>
+        )}
+      </View>
+    </TouchableOpacity>
   );
 };
+const styles = StyleSheet.create({
+  banner: {
+    height: 150,
+    borderRadius: 10,
+    marginBottom: 15,
+    overflow: "hidden",
+  },
+  bannerImage: {
+    width: "100%",
+    height: 150,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  content: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: 15,
+  },
+  title: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  description: {
+    color: "white",
+    fontSize: 12,
+    opacity: 0.8,
+  },
+});
 
 export default EventBanner;
